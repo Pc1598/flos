@@ -2,7 +2,7 @@ DEVICE=$1
 KEYS=keys
 . build/envsetup.sh
 breakfast "$DEVICE" user
-make target-files-package otatools -j12
+make target-files-package otatools
 # Sign the build
 croot
 sign_target_files_apks -o -d $KEYS \
