@@ -152,10 +152,7 @@ ota_from_target_files -k $KEYS/releasekey \
     "out/$OTA_FILE_NAME"
 
 # Copy it to the builds directory
-BUILDS_DIR="~/Downloads/lineage/"
-if [[ -d ${BUILDS_DIR} ]]; then
-    rm -rf ${BUILDS_DIR};
-fi
+BUILDS_DIR="/home/piyush/Downloads/lineage/"
 cd out
 cp ${OTA_FILE_NAME} ${BUILDS_DIR}
 partitions="boot dtbo recovery vendor_boot"
