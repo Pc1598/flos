@@ -153,9 +153,8 @@ ota_from_target_files -k $KEYS/releasekey \
 
 # Copy it to the builds directory
 BUILDS_DIR="/home/piyush/Downloads/lineage/"
-cd out
-cp ${OTA_FILE_NAME} ${BUILDS_DIR}
+mv out/${OTA_FILE_NAME} ${BUILDS_DIR}
 partitions="boot dtbo recovery vendor_boot"
 for partition in ${partitions}; do
-    unzip -p signed-target_files.zip IMAGES/"${partition}".img > "${BUILDS_DIR}/${partition}.img";
+    unzip -p out/signed-target_files.zip IMAGES/"${partition}".img > "${BUILDS_DIR}/${partition}.img";
 done
