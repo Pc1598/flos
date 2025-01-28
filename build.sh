@@ -1,7 +1,7 @@
 DEVICE=$1
 KEYS=vendor/lineage-priv/keys
 . build/envsetup.sh
-breakfast "$DEVICE" user
+breakfast "$DEVICE"
 make target-files-package otatools
 # Sign the build
 croot
