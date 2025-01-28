@@ -1,5 +1,5 @@
 DEVICE=$1
-KEYS=keys
+KEYS=vendor/lineage-priv/keys
 . build/envsetup.sh
 breakfast "$DEVICE" user
 make target-files-package otatools
