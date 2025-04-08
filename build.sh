@@ -158,3 +158,11 @@ partitions="boot dtbo recovery vendor_boot"
 for partition in ${partitions}; do
     unzip -p out/signed-target_files.zip IMAGES/"${partition}".img > "${BUILDS_DIR}/${partition}.img";
 done
+
+ota_from_target_files -k $KEYS/releasekey \
+    --block \
+    --backup=true \
+    -i out/PREVIOUS-signed-target_files.zip out/signed-target_files.zip \
+    "out/incremental_$OTA_FILE_NAME"
+
+mv out/signed-target_files.zip out/PREVIOUS-signed-target_files.zip
