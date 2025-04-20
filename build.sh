@@ -1,5 +1,5 @@
 DEVICE=$1
-KEYS=vendor/lineage-priv/keys
+KEYS=~/.android-certs
 . build/envsetup.sh
 breakfast "$DEVICE"
 make target-files-package otatools
